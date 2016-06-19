@@ -16,6 +16,14 @@ public class Agenda{
 		contactos.remove(indiceContacto);
 		System.out.println("Se elimino correctamente.");
 	}
+        
+        public void editarContacto(int indiceContacto, Contacto c){
+                contactos.set(indiceContacto,c);
+	}
+
+	public void vaciarAgenda(){
+		contactos.clear();
+	}
 
 	@Override
 	public String toString(){

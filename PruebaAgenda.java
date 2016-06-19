@@ -8,9 +8,10 @@ public class PruebaAgenda{
 		String apellido;
 		String numero;
 		int opcionElegida;
+                int indice;
 
 		do{
-			System.out.println("Agenda java PM \n" +"\t1.- Agregar Contacto\n"+"\t2.- Eliminar Contacto\n" + "\t3.- Ver Contactos\n" + "\t4.- Salir");
+			System.out.println("Agenda java PM \n" +"\t1.- Agregar Contacto\n"+"\t2.- Eliminar Contacto\n" + "\t3.- Ver Contactos\n" + "\t4.- Editar Contacto\n" + "\t5.- Eliminar Lista\n" + "\t6.- Salir\n");
 			System.out.println("Ingrese la opcion que desee: ");
 			opcionElegida = teclado.nextInt();
 			teclado.nextLine();
@@ -37,13 +38,32 @@ public class PruebaAgenda{
 				System.out.println(agenda);
 				break;
 				case 4:
-				System.out.println("Vuelva pronto");
+				
+                                System.out.println(agenda);
+                                    System.out.println("Cual contacto desea modificar");
+                                    indice = teclado.nextInt();
+                                    teclado.nextLine();
+                                    System.out.println("Ingrese el nuevo nombre: ");
+                                    nombre = teclado.nextLine();
+                                    System.out.println("Ingrese el nuevo apellido: ");
+                                    apellido = teclado.nextLine();
+                                    System.out.println("Ingrese el nuevo numero: ");
+                                    numero = teclado.nextLine();
+                                    agenda.editarContacto(indice, new Contacto(nombre, apellido, numero));
 				break;
+                                case 5:
+                                    agenda.vaciarAgenda();
+                                    System.out.println("Todos los contactos se han eliminado");
+                                break;
+
+                                case 6:
+                                    System.out.println("Vuelva pronto");
+                                break;
 				default:
 				System.out.println("Opcion invalida, vuelva a intentar");
 				break;
 			}
-		}while(opcionElegida !=4);
+		}while(opcionElegida !=6);
 		
 	}
 }
