@@ -21,6 +21,13 @@ public class Agenda{
                 contactos.set(indiceContacto,c);
 	}
 
+        public int tengoContacto(){
+            if(contactos.isEmpty())
+                return 0;
+            else
+                return 1;
+        }
+        
 	public void vaciarAgenda(){
 		contactos.clear();
 	}

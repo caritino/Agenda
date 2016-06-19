@@ -30,16 +30,22 @@ public class PruebaAgenda{
 
 				break;
 				case 2:
-				System.out.println(agenda);
-				agenda.eliminarContacto(teclado.nextInt());
+                                    if(agenda.tengoContacto()==1){
+                                        System.out.println(agenda);
+                                        agenda.eliminarContacto(teclado.nextInt());
+                                       }
+                                    else
+                                    {
+                                        System.out.println("La agenda está vacía");
+                                    }
 				//aqui va algo
 				break;
 				case 3:
 				System.out.println(agenda);
 				break;
 				case 4:
-				
-                                System.out.println(agenda);
+                                if(agenda.tengoContacto()==1){
+                                    System.out.println(agenda);
                                     System.out.println("Cual contacto desea modificar");
                                     indice = teclado.nextInt();
                                     teclado.nextLine();
@@ -50,6 +56,12 @@ public class PruebaAgenda{
                                     System.out.println("Ingrese el nuevo numero: ");
                                     numero = teclado.nextLine();
                                     agenda.editarContacto(indice, new Contacto(nombre, apellido, numero));
+                                }
+                                else
+                                {
+                                    System.out.println("La agenda está vacía");
+                                }
+                                
 				break;
                                 case 5:
                                     agenda.vaciarAgenda();
